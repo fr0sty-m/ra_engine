@@ -1,14 +1,14 @@
 #include "utils/clock.hpp"
 #include "utils/color.hpp"
+#include "utils/vec2.hpp"
 #include <ra_engine.h>
 
 void updateGame(float deltaTime) {
-  static float position = 0.0f;
+  ra::vec2<float> position(150.0f, 150.0f);
   float speed = 50.0f;
 
-  position += speed * deltaTime;
-
-  std::cout << "Position: " << position << std::endl;
+  position.x += speed * deltaTime;
+  position.y += speed * deltaTime;
 }
 
 int main() {

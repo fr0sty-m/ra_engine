@@ -1,9 +1,13 @@
 find_package(SDL2 REQUIRED)
 
+include_directories(${CMAKE_SOURCE_DIR}/ra_engine)
+
 add_library(ra_engine-1.0 SHARED
 assets/assets.cpp
 
 core/core.cpp
+
+graphics/display.cpp
 
 utils/clock.cpp
 )
