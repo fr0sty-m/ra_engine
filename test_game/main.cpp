@@ -1,6 +1,3 @@
-#include "utils/clock.hpp"
-#include "utils/color.hpp"
-#include "utils/vec2.hpp"
 #include <ra_engine.h>
 
 void updateGame(float deltaTime) {
