@@ -9,6 +9,8 @@ core/core.cpp
 
 graphics/display.cpp
 
+log/logger.cpp
+
 utils/clock.cpp
 )
 

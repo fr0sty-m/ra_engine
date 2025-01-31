@@ -8,6 +8,10 @@
 
 #include "core/core.hpp"
 
+#include "graphics/display.hpp"
+
+#include "log/logger.hpp"
+
 #include "utils/clock.hpp"
 #include "utils/color.hpp"
 #include "utils/vec2.hpp"

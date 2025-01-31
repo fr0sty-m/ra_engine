@@ -1,3 +1,4 @@
+#include <SDL_video.h>
 #include <ra_engine.h>
 
 void updateGame(float deltaTime) {
@@ -9,26 +10,30 @@ void updateGame(float deltaTime) {
 }
 
 int main() {
-  SDL_Init(SDL_INIT_EVERYTHING);
+  ra::Core core("Hello", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 1280,
+                720, SDL_WINDOW_SHOWN);
+  core.init();
 
-  SDL_Window *window =
-      SDL_CreateWindow("Hello", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED,
-                       1280, 720, SDL_WINDOW_SHOWN);
-  if (window == nullptr) {
-    std::cout << "window could not be created! SDL_Error" << SDL_GetError()
-              << std::endl;
-    return -1;
-  }
+  /*SDL_Window *window =*/
+  /*    SDL_CreateWindow("Hello", SDL_WINDOWPOS_CENTERED,
+   * SDL_WINDOWPOS_CENTERED,*/
+  /*                     1280, 720, SDL_WINDOW_SHOWN);*/
+  /*if (window == nullptr) {*/
+  /*  std::cout << "window could not be created! SDL_Error" << SDL_GetError()*/
+  /*            << std::endl;*/
+  /*  return -1;*/
+  /*}*/
 
-  SDL_Renderer *renderer =
-      SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
-  if (!renderer) {
-    std::cerr << "Renderer could not be created! SDL_Error: " << SDL_GetError()
-              << std::endl;
-    SDL_DestroyWindow(window);
-    SDL_Quit();
-    return -1;
-  }
+  /*SDL_Renderer *renderer =*/
+  /*    SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);*/
+  /*if (!renderer) {*/
+  /*  std::cerr << "Renderer could not be created! SDL_Error: " <<
+   * SDL_GetError()*/
+  /*            << std::endl;*/
+  /*  SDL_DestroyWindow(window);*/
+  /*  SDL_Quit();*/
+  /*  return -1;*/
+  /*}*/
 
   ra::Clock clock;
   clock.start();
