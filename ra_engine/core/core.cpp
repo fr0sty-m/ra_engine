@@ -1,5 +1,4 @@
 #include "core.hpp"
-#include <SDL.h>
 
 namespace ra {
 
@@ -24,7 +23,27 @@ int Core::run() {
   if (init() != 0) {
     return -1;
   }
+  if (loop() != 0) {
+    return -1;
+  }
 
+  return 0;
+}
+
+int Core::loop() {
+  while (!quit) {
+    events();
+
+    update();
+  }
+
+  return 0;
+}
+
+int Core::events() {
+  if (SDL_PollEvent(&_event)) {
+    return -1;
+  }
   return 0;
 }
 

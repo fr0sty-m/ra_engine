@@ -1,4 +1,3 @@
-#include <SDL_video.h>
 #include <ra_engine.h>
 
 void updateGame(float deltaTime) {
@@ -13,6 +12,7 @@ int main() {
   ra::Core core("Hello", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 1280,
                 720, SDL_WINDOW_SHOWN);
   core.init();
+  core.run();
 
   /*SDL_Window *window =*/
   /*    SDL_CreateWindow("Hello", SDL_WINDOWPOS_CENTERED,
