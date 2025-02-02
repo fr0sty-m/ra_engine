@@ -3,35 +3,38 @@
 
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_ttf.h>
+#include <cstdint>
 #include <string>
+
+#include "graphics/window.hpp"
 
 namespace ra {
 
 class Display {
 private:
-  SDL_Window *window;
-  SDL_Renderer *renderer;
-  TTF_Font *font; // Font for rendering text
+  SDL_Renderer *_renderer;
 
 public:
   // Constructor and Destructor
-  Display(const std::string &title, int width, int height);
+  Display(Window window);
   ~Display();
 
   // Initialize SDL2 and TTF
   bool init();
 
   // Methods to draw basic shapes
-  void drawLine(int x1, int y1, int x2, int y2, SDL_Color color);
-  void drawRect(int x, int y, int w, int h, SDL_Color color);
-  void drawCircle(int x, int y, int radius, SDL_Color color);
+  static void drawLine(int x1, int y1, int x2, int y2, SDL_Color color);
+  static void drawRect(int x, int y, int w, int h, SDL_Color color);
+  static void drawCircle(int x, int y, int radius, SDL_Color color);
 
   // Method to render text
-  void drawText(const std::string &text, int x, int y, SDL_Color color);
+  static void drawText(const std::string &text, int x, int y, SDL_Color color);
 
   // Clear the screen and present the rendering
-  void clear();
-  void present();
+  static void setColor(uint8_t r, uint8_t g, uint8_t b);
+  static void setClearColor(uint8_t r, uint8_t g, uint8_t b);
+  static void clear();
+  static void present();
 };
 
 } // namespace ra

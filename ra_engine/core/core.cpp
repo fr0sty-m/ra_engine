@@ -1,4 +1,5 @@
 #include "core.hpp"
+#include "graphics/display.hpp"
 
 namespace ra {
 
@@ -35,8 +36,27 @@ int Core::loop() {
     events();
 
     update();
+    render();
   }
 
+  return 0;
+}
+
+int Core::updateDt() {
+  //
+  return 0;
+}
+
+int Core::update() {
+  //
+  return 0;
+}
+
+int Core::render() {
+  //
+  Display::clear();
+
+  Display::present();
   return 0;
 }
 
